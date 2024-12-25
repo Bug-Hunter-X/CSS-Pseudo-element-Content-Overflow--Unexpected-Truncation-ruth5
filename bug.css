@@ -1,0 +1,18 @@
+The following CSS code snippet demonstrates an unusual issue where a pseudo-element's content is unexpectedly truncated or not displayed correctly.
+
+```css
+.container {
+  width: 200px;
+  height: 100px;
+  position: relative;
+}
+
+.container::before {
+  content: "This is a very long string that might overflow the container.";
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+```
+
+The problem arises because the `::before` pseudo-element's content is not wrapped or handled appropriately when it exceeds the boundaries of its parent container.  Standard text overflow techniques don't directly apply to pseudo-element content.
